@@ -1,0 +1,113 @@
+#include<iostream.h>
+#include<conio.h>
+#include<dos.h>
+#include<string.h>
+#include<stdlib.h>
+int main()
+{
+	char id[50],id1[50]={"PUNB@123"},pass[50],pass1[50]={"ankit@123"},ac[15]={"123456789000"},ac1[15]  ;
+	int i,p,I,ac3,nu;
+	static long long int balance=0,di,wi;
+	 //ac=123456789000,ac1;
+	char b=219;
+	clrscr();
+	cout<<"Welcome in PUNB\nEnter your PUNB Id : ";
+	cin.getline(id,50);
+	cout<<"Enter your passwaord : ";
+	cin.getline(pass,50);
+
+	clrscr();
+	cout<<"PUNB Id : "<<id<<endl;
+	I=strcmp(id,id1);
+	p=strcmp(pass,pass1);
+	if(I==0&&p==0)
+	{
+		cout<<"\n\n\n\n\n\n\n";
+		cout<<"\t\t\t\t   ";
+		cout<<"Please wait......\n\t\t";
+		for(i=0;i<=50;i++)
+		{
+			cout<<b;
+			delay(100);
+		}
+		clrscr();
+		cout<<"Enter your Account number : ";
+		cin.getline(ac1,15);
+		clrscr();
+		cout<<"A/c= "<<ac1<<endl;
+		ac3=strcmp(ac,ac1);
+		if(ac3==0)
+		{
+			while(1)
+			{
+				cout<<"\n\tMenu Bar\n\n\nPress 1 for check balance : \nPress 2 for diposit balance : \nPress 3 for withdrawal balance : \nPress 4 for come back : \n";
+				cin>>nu;
+				clrscr();
+				switch(nu)
+				{
+					case 1:
+					cout<<"\n\t\t\t\t\tYour current balance is : "<<balance<<endl;
+					break;
+					case 2:
+					cout<<"\nEnter diposit amount : ";
+					cin>>di;
+					balance=balance+di;
+					cout<<"\n\t\t\t\t\tTransaction Successfully\n\n\t\t\t\t\tYour current balance is : "<<balance<<endl;
+					break;
+					case 3:
+					cout<<"\nEnter diposit amount : ";
+					cin>>wi;
+					if(balance>wi)
+					{
+						balance=balance-wi;
+						cout<<"\n\t\t\t\t\tTransaction Successfully\n\n\t\t\t\t\tYour current balance is : "<<balance<<endl;
+
+					}
+					else
+					{
+						cout<<"\n\t\t\t\t\tTransaction Unsuccessfully\n\n\t\t\t\t\tYou have a low balance : "<<balance<<endl;
+					}
+					break;
+					case 4:
+					exit(0);
+					break;
+					default : cout<<"Error!\nWrong chouse\n"<<endl;
+				}
+			}
+		}
+		else
+		{
+			cout<<"Invalid A/c number\nPlease try again...."<<endl;
+		}
+	}
+	else if(I!=0)
+	{
+		cout<<"\n\n\n\n\n\n\n";
+		cout<<"\t\t\t\t";
+		cout<<"Please wait......\n\t";
+		for(i=0;i<=50;i++)
+		{
+			cout<<b;
+			delay(100);
+		}
+		clrscr();
+		cout<<"Invalid Id\nTry again...";
+	}
+
+	else
+	{
+		cout<<"\n\n\n\n\n\n\n";
+		cout<<"\t\t\t\t";
+		cout<<"Please wait......\n\t";
+		for(i=0;i<=50;i++)
+		{
+			cout<<b;
+			delay(100);
+		}
+		clrscr();
+		cout<<"Invalid Password\nTry again...";
+	}
+
+	getch();
+	return 0;
+}
